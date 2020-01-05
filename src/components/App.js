@@ -8,8 +8,11 @@ import Events from './Events'
 
 
 const App = () => {
-
-	const [state, dispatch] = useReducer(reducer, [])
+	const initialState = {
+		events: [],
+		operationLogs: []
+	}
+	const [state, dispatch] = useReducer(reducer, initialState)
 
 	return (
 		<AppContext.Provider value={{ state, dispatch }}>
